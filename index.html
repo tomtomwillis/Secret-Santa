@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secret Santa</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎅</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>🎅 Secret Santa</h1>
+      <p class="hint">Add everyone, set any rules, then draw names. You'll get a private link to send to each person.</p>
+    </header>
+
+    <section class="card">
+      <h2>1. Group name</h2>
+      <input id="group" type="text" placeholder="e.g. Office Christmas 2026" maxlength="60" autocomplete="off">
+    </section>
+
+    <section class="card">
+      <h2>2. People</h2>
+      <form id="add-person" class="row">
+        <input id="person-name" type="text" placeholder="Name" maxlength="40" autocomplete="off">
+        <button type="submit">Add</button>
+      </form>
+      <ul id="people" class="list"></ul>
+      <p id="people-count" class="hint"></p>
+    </section>
+
+    <section class="card">
+      <h2>3. Rules <span class="optional">(optional)</span></h2>
+      <p class="hint">Pairs who can't pick each other, such as partners. The rule works both ways.</p>
+      <form id="add-rule" class="row">
+        <select id="rule-a" aria-label="First person"></select>
+        <span class="between">↔</span>
+        <select id="rule-b" aria-label="Second person"></select>
+        <button type="submit">Add rule</button>
+      </form>
+      <ul id="rules" class="list"></ul>
+    </section>
+
+    <section class="card">
+      <button id="draw" class="primary big" type="button">Draw names</button>
+      <p id="error" class="error" role="alert"></p>
+    </section>
+
+    <section id="results" class="card" hidden>
+      <h2>4. Send the links</h2>
+      <p class="hint">Send each person their own link. Don't open anyone else's link, or you'll see who they got.</p>
+      <p id="stale" class="warning" hidden>You've changed the setup since this draw. Draw again to update the links.</p>
+      <ul id="links" class="list links"></ul>
+      <button id="copy-all" type="button">Copy all links</button>
+    </section>
+
+    <footer>
+      <button id="reset" class="text-button" type="button">Start over</button>
+    </footer>
+
+    <noscript><p class="error">This page needs JavaScript turned on.</p></noscript>
+  </main>
+  <script type="module" src="js/organiser.js"></script>
+</body>
+</html>

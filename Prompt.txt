@@ -1,0 +1,9 @@
+I want to make a simple secret Santa app that picks names for a secret Santa. 
+The organiser can add a list of names, name the group and add rules if someone can't pick someone else (and vice versa). 
+
+Once it's ready then the organiser will be given a list of URL links that can be sent to each person to reveal who they have been given. 
+
+Ideally I want this to run on GitHub pages - is this possible? 
+
+Make the page simple with limited animations. 
+When the name of the person is revealed show a spinning wheel with all of the names on it that will stop at the name that has been chosen for them. 

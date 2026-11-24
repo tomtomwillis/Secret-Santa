@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Secret Santa</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="reveal">
+    <div id="content">
+      <p class="eyebrow" id="group"></p>
+      <h1>Hi <span id="me"></span>!</h1>
+      <p class="hint">Press the button to find out who you're buying for.</p>
+
+      <div class="wheel-wrap">
+        <canvas id="wheel" class="wheel blurred" aria-hidden="true"></canvas>
+        <button id="spin" class="primary spin-button" type="button">Spin</button>
+      </div>
+
+      <div id="result" class="result" aria-live="polite" hidden>
+        <p>You're buying for</p>
+        <p class="match" id="match"></p>
+        <p class="hint">Keep it secret! 🤫</p>
+      </div>
+    </div>
+
+    <div id="error" class="card" hidden>
+      <h1>Hmm…</h1>
+      <p>This link doesn't look right. Ask your organiser to send it again.</p>
+    </div>
+
+    <noscript><p class="error">This page needs JavaScript turned on.</p></noscript>
+  </main>
+  <script type="module" src="js/reveal.js"></script>
+</body>
+</html>
